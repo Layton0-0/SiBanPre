@@ -10,45 +10,34 @@ function onPressBtn() {
   alert("버튼이당");
 }
 
-const MyPageMain = ({ navigation }) => {
+const ChangePhoto = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.myPage}>
-        <View style={styles.topPage}>
+      <View style={styles.innerPage}>
+
+        <TouchableOpacity onPress={onPressBtn} style={styles.image}>
+          <Image source={require('../../assets/profile.png')} style={styles.image}></Image>
+        </TouchableOpacity>
 
 
-          <TouchableOpacity onPress={onPressBtn} style={styles.image}>
-            <Image source={require('./assets/profile.png')} style={styles.image}></Image>
-          </TouchableOpacity>
-          <Text style={styles.userName}>김이나</Text>
+        <TouchableOpacity onPress={onPressBtn} style={styles.userProfile}>
+          <Text style={styles.userProfileText}>사진선택</Text>
+        </TouchableOpacity>
 
-          <TouchableOpacity onPress={onPressBtn} style={styles.userProfile}>
-            <Text style={styles.userProfileText}>키: 170cm</Text>
-            <Text style={styles.userProfileText}>몸무게: 50kg</Text>
-          </TouchableOpacity>
+        <TouchableOpacity onPress={onPressBtn} style={styles.userProfile}>
+          <Text style={styles.userProfileText}>저장</Text>
+        </TouchableOpacity>
 
+        <TouchableOpacity onPress={onPressBtn} style={styles.userProfile}>
+          <Text style={styles.userProfileText}>뒤로</Text>
+        </TouchableOpacity>
 
-        </View>
-        <View style={styles.bottomPage}>
-          <TouchableOpacity onPress={onPressBtn} style={styles.myPageBtn}>
-            <Text style={styles.btnText}>내루틴</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={onPressBtn} style={styles.myPageBtn}>
-            <Text style={styles.btnText}>일정관리</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => { navigation.navigate('ACTIVITY') }} style={styles.myPageBtn}>
-            <Text style={styles.btnText}>활동</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={onPressBtn} style={styles.myPageBtn}>
-            <Text style={styles.btnText}>식단관리</Text>
-          </TouchableOpacity>
-        </View>
       </View>
 
     </View>
   );
 }
-export default MyPageMain;
+export default ChangePhoto;
 
 const styles = StyleSheet.create({
   container: {
@@ -56,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ECB390",
     alignItems: "center",
   },
-  myPage: {
+  innerPage: {
     flex: 1.5,
     backgroundColor: "white",
     justifyContent: "center",
@@ -86,7 +75,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
 
   },
-  myPageBtn: {
+  innerPageBtn: {
     alignItems: 'center',
     justifyContent: "center",
     backgroundColor: "#C0D8C0",

@@ -1,6 +1,5 @@
 import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { Dimensions } from 'react-native';
 
 
